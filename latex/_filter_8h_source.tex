@@ -1,0 +1,71 @@
+\doxysection{Filter.\+h}
+\hypertarget{_filter_8h_source}{}\label{_filter_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}CraftItem.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//Specification\ Pattern:\ a\ filtering\ rule\ is\ an\ object,\ not\ a\ function}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//abstract\ class\ =\ interface}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_filter_ae428863f9eb6711fc1975b7dd1b5a480}{matches}}(std::shared\_ptr<CraftItem>\ item)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_filter_a6537f14bba2878ee6079000a176d6c4e}{\string~Filter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//each\ derived\ class\ has\ a\ specific\ responsability}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_category_filter_adb2e4c8dfeb98c25e864a1f5e8326438}{CategoryFilter}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ Category\ targetCategory;\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \doxymbox{\hyperlink{class_category_filter_adb2e4c8dfeb98c25e864a1f5e8326438}{CategoryFilter}}(Category\ cat);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_category_filter_a53d240da0377eef0d0ecc2fd2ab97d39}{matches}}(std::shared\_ptr<CraftItem>\ item)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_max_price_filter_ae3ea3c843ebac094f018756d2358ba8a}{MaxPriceFilter}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ maxPrice;\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \doxymbox{\hyperlink{class_max_price_filter_ae3ea3c843ebac094f018756d2358ba8a}{MaxPriceFilter}}(\textcolor{keywordtype}{double}\ price);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_max_price_filter_a8e4f88dc5887c4f3fde45d65db8b0ac4}{matches}}(std::shared\_ptr<CraftItem>\ item)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_name_filter_a8ab6ea10655198d19f9119b65fe4c26a}{NameFilter}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ searchQuery;\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \doxymbox{\hyperlink{class_name_filter_a8ab6ea10655198d19f9119b65fe4c26a}{NameFilter}}(\textcolor{keyword}{const}\ std::string\&\ query);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_name_filter_aa8971bf8fda603cee5398d59ae53d8d0}{matches}}(std::shared\_ptr<CraftItem>\ item)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{//Composite\ Pattern:\ treat\ a\ group\ of\ objects\ as\ you\ would\ treat\ an\ object}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//even\ if\ it\ is\ a\ complex\ or\ simple\ filter,\ they\ all\ have\ the\ same\ function\ and\ will\ be\ treated\ the\ same}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_and_filter_ab4fdb3d79079aefd6edf334a4fb6c73f}{AndFilter}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ filter\ 1\ and\ 2\ will\ keep\ pointers\ to\ other\ filters\ that\ can\ also\ be\ simple\ or\ complex}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ Filter\ is\ an\ abstract\ class,\ so\ we\ need\ pointers\ to\ its\ objects}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ shared,\ because\ we\ also\ need\ them\ in\ teh\ controller,\ repo\ and\ ui}}
+\DoxyCodeLine{00095\ \ \ \ \ std::shared\_ptr<Filter>\ filter1;\ }
+\DoxyCodeLine{00096\ \ \ \ \ std::shared\_ptr<Filter>\ filter2;\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00103\ \ \ \ \ \doxymbox{\hyperlink{class_and_filter_ab4fdb3d79079aefd6edf334a4fb6c73f}{AndFilter}}(std::shared\_ptr<Filter>\ f1,\ std::shared\_ptr<Filter>\ f2);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_and_filter_a6f079d290310751b128febcabf9cbbbd}{matches}}(std::shared\_ptr<CraftItem>\ item)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_or_filter_ac22e6393ca64ec512a306591db9f5991}{OrFilter}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_filter}{Filter}}\ \{}
+\DoxyCodeLine{00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00116\ \ \ \ \ std::shared\_ptr<Filter>\ filter1;\ }
+\DoxyCodeLine{00117\ \ \ \ \ std::shared\_ptr<Filter>\ filter2;\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00124\ \ \ \ \ \doxymbox{\hyperlink{class_or_filter_ac22e6393ca64ec512a306591db9f5991}{OrFilter}}(std::shared\_ptr<Filter>\ f1,\ std::shared\_ptr<Filter>\ f2);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_or_filter_ac9566455d6cd3035717c4922f644ec63}{matches}}(std::shared\_ptr<CraftItem>\ item)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00127\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,85 @@
+\doxysection{Category\+Filter Class Reference}
+\hypertarget{class_category_filter}{}\label{class_category_filter}\index{CategoryFilter@{CategoryFilter}}
+
+
+A specific filter that checks if an item belongs to a target category.  
+
+
+
+
+{\ttfamily \+\#include $<$Filter.\+h$>$}
+
+Inheritance diagram for Category\+Filter:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_category_filter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_category_filter_adb2e4c8dfeb98c25e864a1f5e8326438}{Category\+Filter}} (Category cat)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_category_filter}{Category\+Filter}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_category_filter_a53d240da0377eef0d0ecc2fd2ab97d39}{matches}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item) const override
+\begin{DoxyCompactList}\small\item\em Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_filter}{Filter}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Filter} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure safe polymorphic deletion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A specific filter that checks if an item belongs to a target category. 
+
+\label{doc-constructors}
+\Hypertarget{class_category_filter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_category_filter_adb2e4c8dfeb98c25e864a1f5e8326438}\index{CategoryFilter@{CategoryFilter}!CategoryFilter@{CategoryFilter}}
+\index{CategoryFilter@{CategoryFilter}!CategoryFilter@{CategoryFilter}}
+\doxysubsubsection{\texorpdfstring{CategoryFilter()}{CategoryFilter()}}
+{\footnotesize\ttfamily \label{class_category_filter_adb2e4c8dfeb98c25e864a1f5e8326438} 
+Category\+Filter::\+\+Category\+Filter (\begin{DoxyParamCaption}\item[{Category}]{cat}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_category_filter}{Category\+Filter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cat} & The target Category enum value to filter by. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_category_filter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_category_filter_a53d240da0377eef0d0ecc2fd2ab97d39}\index{CategoryFilter@{CategoryFilter}!matches@{matches}}
+\index{matches@{matches}!CategoryFilter@{CategoryFilter}}
+\doxysubsubsection{\texorpdfstring{matches()}{matches()}}
+{\footnotesize\ttfamily \label{class_category_filter_a53d240da0377eef0d0ecc2fd2ab97d39} 
+bool Category\+Filter::\+matches (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} being evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item matches the criteria, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_filter_ae428863f9eb6711fc1975b7dd1b5a480}{Filter}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Filter.\+h\item 
+Filter.\+cpp\end{DoxyCompactItemize}

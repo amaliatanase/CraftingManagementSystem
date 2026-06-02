@@ -1,0 +1,85 @@
+\doxysection{Name\+Filter Class Reference}
+\hypertarget{class_name_filter}{}\label{class_name_filter}\index{NameFilter@{NameFilter}}
+
+
+A specific filter that checks if an item\textquotesingle{}s name contains a given search string.  
+
+
+
+
+{\ttfamily \+\#include $<$Filter.\+h$>$}
+
+Inheritance diagram for Name\+Filter:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_name_filter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_name_filter_a8ab6ea10655198d19f9119b65fe4c26a}{Name\+Filter}} (const std::\+string \&query)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_name_filter}{Name\+Filter}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_name_filter_aa8971bf8fda603cee5398d59ae53d8d0}{matches}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item) const override
+\begin{DoxyCompactList}\small\item\em Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_filter}{Filter}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Filter} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure safe polymorphic deletion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A specific filter that checks if an item\textquotesingle{}s name contains a given search string. 
+
+\label{doc-constructors}
+\Hypertarget{class_name_filter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_name_filter_a8ab6ea10655198d19f9119b65fe4c26a}\index{NameFilter@{NameFilter}!NameFilter@{NameFilter}}
+\index{NameFilter@{NameFilter}!NameFilter@{NameFilter}}
+\doxysubsubsection{\texorpdfstring{NameFilter()}{NameFilter()}}
+{\footnotesize\ttfamily \label{class_name_filter_a8ab6ea10655198d19f9119b65fe4c26a} 
+Name\+Filter::\+\+Name\+Filter (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{query}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_name_filter}{Name\+Filter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & The substring to look for in the item names. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_name_filter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_name_filter_aa8971bf8fda603cee5398d59ae53d8d0}\index{NameFilter@{NameFilter}!matches@{matches}}
+\index{matches@{matches}!NameFilter@{NameFilter}}
+\doxysubsubsection{\texorpdfstring{matches()}{matches()}}
+{\footnotesize\ttfamily \label{class_name_filter_aa8971bf8fda603cee5398d59ae53d8d0} 
+bool Name\+Filter::\+matches (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} being evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item matches the criteria, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_filter_ae428863f9eb6711fc1975b7dd1b5a480}{Filter}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Filter.\+h\item 
+Filter.\+cpp\end{DoxyCompactItemize}

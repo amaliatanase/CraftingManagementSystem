@@ -1,0 +1,65 @@
+\doxysection{Filter Class Reference}
+\hypertarget{class_filter}{}\label{class_filter}\index{Filter@{Filter}}
+
+
+Abstract base class (Interface) for the Specification Design Pattern.  
+
+
+
+
+{\ttfamily \+\#include $<$Filter.\+h$>$}
+
+Inheritance diagram for Filter:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_filter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \doxymbox{\hyperlink{class_filter_ae428863f9eb6711fc1975b7dd1b5a480}{matches}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item) const =0
+\begin{DoxyCompactList}\small\item\em Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. \end{DoxyCompactList}\item 
+\Hypertarget{class_filter_a6537f14bba2878ee6079000a176d6c4e}\label{class_filter_a6537f14bba2878ee6079000a176d6c4e} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Filter} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure safe polymorphic deletion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class (Interface) for the Specification Design Pattern. 
+
+
+\begin{DoxyItemize}
+\item This class defines the contract for filtering rules. Instead of hardcoding filtering logic into large functions, each rule is encapsulated as an object. This makes the system highly extensible. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_filter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_filter_ae428863f9eb6711fc1975b7dd1b5a480}\index{Filter@{Filter}!matches@{matches}}
+\index{matches@{matches}!Filter@{Filter}}
+\doxysubsubsection{\texorpdfstring{matches()}{matches()}}
+{\footnotesize\ttfamily \label{class_filter_ae428863f9eb6711fc1975b7dd1b5a480} 
+virtual bool Filter::\+matches (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} being evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item matches the criteria, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \doxymbox{\hyperlink{class_and_filter_a6f079d290310751b128febcabf9cbbbd}{And\+Filter}}, \doxymbox{\hyperlink{class_category_filter_a53d240da0377eef0d0ecc2fd2ab97d39}{Category\+Filter}}, \doxymbox{\hyperlink{class_max_price_filter_a8e4f88dc5887c4f3fde45d65db8b0ac4}{Max\+Price\+Filter}}, \doxymbox{\hyperlink{class_name_filter_aa8971bf8fda603cee5398d59ae53d8d0}{Name\+Filter}}, and \doxymbox{\hyperlink{class_or_filter_ac9566455d6cd3035717c4922f644ec63}{Or\+Filter}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Filter.\+h\end{DoxyCompactItemize}

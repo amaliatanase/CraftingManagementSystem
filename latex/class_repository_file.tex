@@ -1,0 +1,189 @@
+\doxysection{Repository\+File Class Reference}
+\hypertarget{class_repository_file}{}\label{class_repository_file}\index{RepositoryFile@{RepositoryFile}}
+
+
+Abstract base class for file-\/based repositories.  
+
+
+
+
+{\ttfamily \+\#include $<$Repository\+File.\+h$>$}
+
+Inheritance diagram for Repository\+File:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_repository_file}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_repository_file_a2338677cda3083e9ebfd21f3ce2639d4}{Repository\+File}} (const std::\+string \&file)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_repository_file}{Repository\+File} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_repository_file_a574a47f3b536658c92e3d34c42554e71}\label{class_repository_file_a574a47f3b536658c92e3d34c42554e71} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Repository\+File} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_repository_file_aa53595522c611cc0ac7f5a1def47a415}{load\+From\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to load data from the file into memory. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_repository_file_aacaa9e4c2017ee71f56b8b8b715863c8}{save\+To\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to save data from memory to the file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_repository_file_a98302817a6316c04a1d16f52dc389056}{add}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item) override
+\begin{DoxyCompactList}\small\item\em Adds an item to the repository and saves the updated list to the file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_repository_file_ad0262ba1e912a594c45dbcf29228033d}{remove}} (int id) override
+\begin{DoxyCompactList}\small\item\em Removes an item from the repository by ID and saves the updated list to the file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_repository_file_a1ab985ec563040fe6a938c28dcec22b1}{update}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ new\+Item) override
+\begin{DoxyCompactList}\small\item\em Updates an item in the repository and saves the updated list to the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_repository}{Repository}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Repository} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Repository} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure safe polymorphic deletion of derived repositories. \end{DoxyCompactList}\item 
+virtual std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ \doxymbox{\hyperlink{class_repository_ad73f3f9ecb9acf694d8ec0f18c57f6fc}{find}} (int id)
+\begin{DoxyCompactList}\small\item\em Searches for an item in the repository by its ID. \end{DoxyCompactList}\item 
+virtual std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ \doxymbox{\hyperlink{class_repository_ac81678f667edace4788fe09486ac888a}{get\+All}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves all items currently stored in the repository. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \doxymbox{\hyperlink{class_repository_a449e373b1b703ad5bb29083779134a01}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of items in the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_repository_file_a901ca4d00023f2ac525c3298da5aa2bd}\label{class_repository_file_a901ca4d00023f2ac525c3298da5aa2bd} 
+std::\+string {\bfseries filename}
+\begin{DoxyCompactList}\small\item\em The name or path of the file used for persistent storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_repository}{Repository}}}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ \doxymbox{\hyperlink{class_repository_a2772a809f28bd671e8e1d32a4e7ca7fd}{items}}
+\begin{DoxyCompactList}\small\item\em Internal storage for the craft items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for file-\/based repositories. 
+
+
+\begin{DoxyItemize}
+\item Inherits from the base \doxylink{class_repository}{Repository} class and adds file management capabilities. It forces derived classes to implement specific loading and saving mechanisms while overriding CRUD operations to automatically save changes to the disk. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_repository_file_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_repository_file_a2338677cda3083e9ebfd21f3ce2639d4}\index{RepositoryFile@{RepositoryFile}!RepositoryFile@{RepositoryFile}}
+\index{RepositoryFile@{RepositoryFile}!RepositoryFile@{RepositoryFile}}
+\doxysubsubsection{\texorpdfstring{RepositoryFile()}{RepositoryFile()}}
+{\footnotesize\ttfamily \label{class_repository_file_a2338677cda3083e9ebfd21f3ce2639d4} 
+Repository\+File::\+\+Repository\+File (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_repository_file}{Repository\+File} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The path/\+name of the file to manage. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_repository_file_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_repository_file_a98302817a6316c04a1d16f52dc389056}\index{RepositoryFile@{RepositoryFile}!add@{add}}
+\index{add@{add}!RepositoryFile@{RepositoryFile}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \label{class_repository_file_a98302817a6316c04a1d16f52dc389056} 
+void Repository\+File::\+add (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds an item to the repository and saves the updated list to the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} to add. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \doxymbox{\hyperlink{class_repository_a7664a3ec6a9da19683649833fff1a94e}{Repository}}.
+
+\Hypertarget{class_repository_file_aa53595522c611cc0ac7f5a1def47a415}\index{RepositoryFile@{RepositoryFile}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!RepositoryFile@{RepositoryFile}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily \label{class_repository_file_aa53595522c611cc0ac7f5a1def47a415} 
+virtual void Repository\+File::\+load\+From\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method to load data from the file into memory. 
+
+
+\begin{DoxyItemize}
+\item Must be implemented by concrete classes according to their specific file format. 
+\end{DoxyItemize}
+
+Implemented in \doxymbox{\hyperlink{class_repository_file_c_s_v_ab42fbfaf51480e78b857acf15da77f7f}{Repository\+File\+CSV}}, and \doxymbox{\hyperlink{class_repository_file_j_s_o_n_a83ccf899c2620e7fc7fed9cc26ff6ff8}{Repository\+File\+JSON}}.
+
+\Hypertarget{class_repository_file_ad0262ba1e912a594c45dbcf29228033d}\index{RepositoryFile@{RepositoryFile}!remove@{remove}}
+\index{remove@{remove}!RepositoryFile@{RepositoryFile}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \label{class_repository_file_ad0262ba1e912a594c45dbcf29228033d} 
+void Repository\+File::\+remove (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes an item from the repository by ID and saves the updated list to the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the item to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \doxymbox{\hyperlink{class_repository_a33730fe1592261b1d9b42dab8afb15ff}{Repository}}.
+
+\Hypertarget{class_repository_file_aacaa9e4c2017ee71f56b8b8b715863c8}\index{RepositoryFile@{RepositoryFile}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!RepositoryFile@{RepositoryFile}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily \label{class_repository_file_aacaa9e4c2017ee71f56b8b8b715863c8} 
+virtual void Repository\+File::\+save\+To\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method to save data from memory to the file. 
+
+
+\begin{DoxyItemize}
+\item Must be implemented by concrete classes according to their specific file format. 
+\end{DoxyItemize}
+
+Implemented in \doxymbox{\hyperlink{class_repository_file_c_s_v_a4a14a6c71f2e8daf06deefba9734090c}{Repository\+File\+CSV}}, and \doxymbox{\hyperlink{class_repository_file_j_s_o_n_afa918bcde0b528eaa8188f460904db04}{Repository\+File\+JSON}}.
+
+\Hypertarget{class_repository_file_a1ab985ec563040fe6a938c28dcec22b1}\index{RepositoryFile@{RepositoryFile}!update@{update}}
+\index{update@{update}!RepositoryFile@{RepositoryFile}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_repository_file_a1ab985ec563040fe6a938c28dcec22b1} 
+void Repository\+File::\+update (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{new\+Item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates an item in the repository and saves the updated list to the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Item} & A shared pointer to the new state of the item. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \doxymbox{\hyperlink{class_repository_a0153d29532664e58cd9564758daadfa0}{Repository}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Repository\+File.\+h\item 
+Repository\+File.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\doxysection{Action Class Reference}
+\hypertarget{class_action}{}\label{class_action}\index{Action@{Action}}
+
+
+Abstract base class (Interface) representing a generic executable command.  
+
+
+
+
+{\ttfamily \+\#include $<$Action.\+h$>$}
+
+Inheritance diagram for Action:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_action}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{class_action_a280616e7a6e86d4f03a5d3ae372cd547}{execute}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the encapsulated action. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_action_a1a9fbaad0549a068b97db44c51742bfc}{undo}} ()=0
+\begin{DoxyCompactList}\small\item\em Reverts the effects of the executed action in the repository. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_action_a74607eb18e62df17d5b24e8558ae7895}{redo}} ()=0
+\begin{DoxyCompactList}\small\item\em Reapplies the action after it has been undone. \end{DoxyCompactList}\item 
+\Hypertarget{class_action_abfc040fdc62410622a0e3835a713740f}\label{class_action_abfc040fdc62410622a0e3835a713740f} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Action} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor ensures safe polymorphic deletion of derived action objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class (Interface) representing a generic executable command. 
+
+
+\begin{DoxyItemize}
+\item This class is the core of the Command Design Pattern implementation. It encapsulates operations as objects, allowing the \doxylink{class_controller}{Controller} to maintain a stack of generic pointers for polymorphic execution, undo, and redo functionalities. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_action_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_action_a280616e7a6e86d4f03a5d3ae372cd547}\index{Action@{Action}!execute@{execute}}
+\index{execute@{execute}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_action_a280616e7a6e86d4f03a5d3ae372cd547} 
+virtual void Action::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Executes the encapsulated action. 
+
+
+
+Implemented in \doxymbox{\hyperlink{class_add_action_aee34ec0787c94b5bdd101222612a8dcc}{Add\+Action}}, \doxymbox{\hyperlink{class_remove_action_a8a606ed1c4bff1642764eb2cf29745ec}{Remove\+Action}}, and \doxymbox{\hyperlink{class_update_action_a61b22f62c5abcae38fbeaecf86ec2e28}{Update\+Action}}.
+
+\Hypertarget{class_action_a74607eb18e62df17d5b24e8558ae7895}\index{Action@{Action}!redo@{redo}}
+\index{redo@{redo}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily \label{class_action_a74607eb18e62df17d5b24e8558ae7895} 
+virtual void Action::\+redo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reapplies the action after it has been undone. 
+
+
+
+Implemented in \doxymbox{\hyperlink{class_add_action_ae13d35f81625fef31e477b2af15f2ff9}{Add\+Action}}, \doxymbox{\hyperlink{class_remove_action_a92a54a08c7d7182323ed4265053455b3}{Remove\+Action}}, and \doxymbox{\hyperlink{class_update_action_afdaf99e93c350deab5820d818306a029}{Update\+Action}}.
+
+\Hypertarget{class_action_a1a9fbaad0549a068b97db44c51742bfc}\index{Action@{Action}!undo@{undo}}
+\index{undo@{undo}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_action_a1a9fbaad0549a068b97db44c51742bfc} 
+virtual void Action::\+undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reverts the effects of the executed action in the repository. 
+
+
+
+Implemented in \doxymbox{\hyperlink{class_add_action_ae27fb86ff628618c703f2d0b89ab241e}{Add\+Action}}, \doxymbox{\hyperlink{class_remove_action_a8f1bbc1caa6ecd55fd9ed98f24cae297}{Remove\+Action}}, and \doxymbox{\hyperlink{class_update_action_a10b00d2dcccb72962e0e954afa381a19}{Update\+Action}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Action.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,224 @@
+\doxysection{Craft\+Item Class Reference}
+\hypertarget{class_craft_item}{}\label{class_craft_item}\index{CraftItem@{CraftItem}}
+
+
+Represents a single product in the handmade craft store.  
+
+
+
+
+{\ttfamily \+\#include $<$Craft\+Item.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_craft_item_a97dfd750ed7fbf43c0915ca68733bb2c}{Craft\+Item}} (int id, const std::\+string \&name, Category category, double price, int quantity)
+\begin{DoxyCompactList}\small\item\em Constructs a new Craft Item object. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_craft_item_ab278abdc6341d56da177c577eaef06c2}{get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Gets the unique ID of the item. \end{DoxyCompactList}\item 
+const std::\+string \& \doxymbox{\hyperlink{class_craft_item_ab8d9f00f330588fd3144c1cac58ec3e9}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the item. \end{DoxyCompactList}\item 
+Category \doxymbox{\hyperlink{class_craft_item_a1bb5c4bf846cf3e4a9c27ca930c78b92}{get\+Category}} () const
+\begin{DoxyCompactList}\small\item\em Gets the category of the item. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_craft_item_a8d092b5cbebd791f86136363ce97faa3}{get\+Price}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current price of the item. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_craft_item_a08c8ccb7507ef880a7f519d1c2e6e534}{get\+Quantity}} () const
+\begin{DoxyCompactList}\small\item\em Gets the available stock quantity. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_craft_item_a9f5048f6469affffe0101c421739a57e}{set\+Price}} (double new\+Price)
+\begin{DoxyCompactList}\small\item\em Updates the price of the item. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_craft_item_a13195313918fb75a7c8327059a71ff06}{set\+Quantity}} (int new\+Quantity)
+\begin{DoxyCompactList}\small\item\em Updates the available stock quantity of the item. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{class_craft_item_a65e17dbc03ce500d817079e93f86042a}{get\+Category\+As\+String}} () const
+\begin{DoxyCompactList}\small\item\em Converts the item\textquotesingle{}s category enum to its string representation. \end{DoxyCompactList}\item 
+\Hypertarget{class_craft_item_a835ace1cb1377e89b9c88e3cf41f9924}\label{class_craft_item_a835ace1cb1377e89b9c88e3cf41f9924} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Craft\+Item} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Category \doxymbox{\hyperlink{class_craft_item_a2237451bc490a7e96a4d007358e2144e}{string\+To\+Category}} (const std::\+string \&category\+Str)
+\begin{DoxyCompactList}\small\item\em Static utility method that converts a string to the corresponding Category enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single product in the handmade craft store. 
+
+
+\begin{DoxyItemize}
+\item This class acts as the main domain entity of the application. It holds all relevant details about a specific craft item, including its identifier, name, category, pricing, and available stock. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_craft_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_craft_item_a97dfd750ed7fbf43c0915ca68733bb2c}\index{CraftItem@{CraftItem}!CraftItem@{CraftItem}}
+\index{CraftItem@{CraftItem}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{CraftItem()}{CraftItem()}}
+{\footnotesize\ttfamily \label{class_craft_item_a97dfd750ed7fbf43c0915ca68733bb2c} 
+Craft\+Item::\+\+Craft\+Item (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{const std::\+string \&}]{name}{, }\item[{Category}]{category}{, }\item[{double}]{price}{, }\item[{int}]{quantity}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a new Craft Item object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique ID of the item. \\
+\hline
+{\em name} & The name of the product. \\
+\hline
+{\em category} & The category enum of the item. \\
+\hline
+{\em price} & The cost of the item. \\
+\hline
+{\em quantity} & The initial stock available. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_craft_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_craft_item_a1bb5c4bf846cf3e4a9c27ca930c78b92}\index{CraftItem@{CraftItem}!getCategory@{getCategory}}
+\index{getCategory@{getCategory}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{getCategory()}{getCategory()}}
+{\footnotesize\ttfamily \label{class_craft_item_a1bb5c4bf846cf3e4a9c27ca930c78b92} 
+Category Craft\+Item::\+get\+Category (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the category of the item. 
+
+\begin{DoxyReturn}{Returns}
+The item\textquotesingle{}s category as an enum. 
+\end{DoxyReturn}
+\Hypertarget{class_craft_item_a65e17dbc03ce500d817079e93f86042a}\index{CraftItem@{CraftItem}!getCategoryAsString@{getCategoryAsString}}
+\index{getCategoryAsString@{getCategoryAsString}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{getCategoryAsString()}{getCategoryAsString()}}
+{\footnotesize\ttfamily \label{class_craft_item_a65e17dbc03ce500d817079e93f86042a} 
+std::\+string Craft\+Item::\+get\+Category\+As\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Converts the item\textquotesingle{}s category enum to its string representation. 
+
+
+\begin{DoxyItemize}
+\item Useful for displaying the category in the User Interface or saving to text files. \begin{DoxyReturn}{Returns}
+A string representing the category (e.\+g., "{}\+Material"{}). 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_craft_item_ab278abdc6341d56da177c577eaef06c2}\index{CraftItem@{CraftItem}!getID@{getID}}
+\index{getID@{getID}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily \label{class_craft_item_ab278abdc6341d56da177c577eaef06c2} 
+int Craft\+Item::\+get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the unique ID of the item. 
+
+\begin{DoxyReturn}{Returns}
+The integer ID. 
+\end{DoxyReturn}
+\Hypertarget{class_craft_item_ab8d9f00f330588fd3144c1cac58ec3e9}\index{CraftItem@{CraftItem}!getName@{getName}}
+\index{getName@{getName}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_craft_item_ab8d9f00f330588fd3144c1cac58ec3e9} 
+const std::\+string \& Craft\+Item::\+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the item. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the item\textquotesingle{}s name string. 
+\end{DoxyReturn}
+\Hypertarget{class_craft_item_a8d092b5cbebd791f86136363ce97faa3}\index{CraftItem@{CraftItem}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily \label{class_craft_item_a8d092b5cbebd791f86136363ce97faa3} 
+double Craft\+Item::\+get\+Price (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the current price of the item. 
+
+\begin{DoxyReturn}{Returns}
+The price as a double. 
+\end{DoxyReturn}
+\Hypertarget{class_craft_item_a08c8ccb7507ef880a7f519d1c2e6e534}\index{CraftItem@{CraftItem}!getQuantity@{getQuantity}}
+\index{getQuantity@{getQuantity}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{getQuantity()}{getQuantity()}}
+{\footnotesize\ttfamily \label{class_craft_item_a08c8ccb7507ef880a7f519d1c2e6e534} 
+int Craft\+Item::\+get\+Quantity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the available stock quantity. 
+
+\begin{DoxyReturn}{Returns}
+The quantity as an integer. 
+\end{DoxyReturn}
+\Hypertarget{class_craft_item_a9f5048f6469affffe0101c421739a57e}\index{CraftItem@{CraftItem}!setPrice@{setPrice}}
+\index{setPrice@{setPrice}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{setPrice()}{setPrice()}}
+{\footnotesize\ttfamily \label{class_craft_item_a9f5048f6469affffe0101c421739a57e} 
+void Craft\+Item::\+set\+Price (\begin{DoxyParamCaption}\item[{double}]{new\+Price}{}\end{DoxyParamCaption})}
+
+
+
+Updates the price of the item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Price} & The new price to be set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_craft_item_a13195313918fb75a7c8327059a71ff06}\index{CraftItem@{CraftItem}!setQuantity@{setQuantity}}
+\index{setQuantity@{setQuantity}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{setQuantity()}{setQuantity()}}
+{\footnotesize\ttfamily \label{class_craft_item_a13195313918fb75a7c8327059a71ff06} 
+void Craft\+Item::\+set\+Quantity (\begin{DoxyParamCaption}\item[{int}]{new\+Quantity}{}\end{DoxyParamCaption})}
+
+
+
+Updates the available stock quantity of the item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Quantity} & The new stock amount. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_craft_item_a2237451bc490a7e96a4d007358e2144e}\index{CraftItem@{CraftItem}!stringToCategory@{stringToCategory}}
+\index{stringToCategory@{stringToCategory}!CraftItem@{CraftItem}}
+\doxysubsubsection{\texorpdfstring{stringToCategory()}{stringToCategory()}}
+{\footnotesize\ttfamily \label{class_craft_item_a2237451bc490a7e96a4d007358e2144e} 
+Category Craft\+Item::\+string\+To\+Category (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category\+Str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static utility method that converts a string to the corresponding Category enum. 
+
+
+\begin{DoxyItemize}
+\item Useful when parsing data from the User Interface or reading from text files. 
+\begin{DoxyParams}{Parameters}
+{\em category\+Str} & The string representation of the category. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding Category enum value. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+invalid\+\_\+argument} & If the string does not match any known category. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Craft\+Item.\+h\item 
+Craft\+Item.\+cpp\end{DoxyCompactItemize}

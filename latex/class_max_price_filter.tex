@@ -1,0 +1,85 @@
+\doxysection{Max\+Price\+Filter Class Reference}
+\hypertarget{class_max_price_filter}{}\label{class_max_price_filter}\index{MaxPriceFilter@{MaxPriceFilter}}
+
+
+A specific filter that checks if an item\textquotesingle{}s price is below or equal to a maximum limit.  
+
+
+
+
+{\ttfamily \+\#include $<$Filter.\+h$>$}
+
+Inheritance diagram for Max\+Price\+Filter:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_max_price_filter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_max_price_filter_ae3ea3c843ebac094f018756d2358ba8a}{Max\+Price\+Filter}} (double price)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_max_price_filter}{Max\+Price\+Filter}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_max_price_filter_a8e4f88dc5887c4f3fde45d65db8b0ac4}{matches}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item) const override
+\begin{DoxyCompactList}\small\item\em Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_filter}{Filter}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Filter} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure safe polymorphic deletion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A specific filter that checks if an item\textquotesingle{}s price is below or equal to a maximum limit. 
+
+\label{doc-constructors}
+\Hypertarget{class_max_price_filter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_max_price_filter_ae3ea3c843ebac094f018756d2358ba8a}\index{MaxPriceFilter@{MaxPriceFilter}!MaxPriceFilter@{MaxPriceFilter}}
+\index{MaxPriceFilter@{MaxPriceFilter}!MaxPriceFilter@{MaxPriceFilter}}
+\doxysubsubsection{\texorpdfstring{MaxPriceFilter()}{MaxPriceFilter()}}
+{\footnotesize\ttfamily \label{class_max_price_filter_ae3ea3c843ebac094f018756d2358ba8a} 
+Max\+Price\+Filter::\+\+Max\+Price\+Filter (\begin{DoxyParamCaption}\item[{double}]{price}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_max_price_filter}{Max\+Price\+Filter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & The maximum threshold for the item\textquotesingle{}s price. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_max_price_filter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_max_price_filter_a8e4f88dc5887c4f3fde45d65db8b0ac4}\index{MaxPriceFilter@{MaxPriceFilter}!matches@{matches}}
+\index{matches@{matches}!MaxPriceFilter@{MaxPriceFilter}}
+\doxysubsubsection{\texorpdfstring{matches()}{matches()}}
+{\footnotesize\ttfamily \label{class_max_price_filter_a8e4f88dc5887c4f3fde45d65db8b0ac4} 
+bool Max\+Price\+Filter::\+matches (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} being evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item matches the criteria, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_filter_ae428863f9eb6711fc1975b7dd1b5a480}{Filter}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Filter.\+h\item 
+Filter.\+cpp\end{DoxyCompactItemize}

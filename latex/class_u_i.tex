@@ -1,0 +1,61 @@
+\doxysection{UI Class Reference}
+\hypertarget{class_u_i}{}\label{class_u_i}\index{UI@{UI}}
+
+
+The main Graphical User Interface of the application.  
+
+
+
+
+{\ttfamily \+\#include $<$UI.\+h$>$}
+
+Inheritance diagram for UI:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_u_i_aa37293fb2faa9fde9265df7e14bf1e83}{UI}} (\doxymbox{\hyperlink{class_controller}{Controller}} \&controller, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{class_u_i}{UI} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_a1b23d0c64c7cbb3d143d90ec532a7ccd}\label{class_u_i_a1b23d0c64c7cbb3d143d90ec532a7ccd} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+UI} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_u_i}{UI} class. Memory management of widgets is automatically handled by the Qt parent-\/child system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main Graphical User Interface of the application. 
+
+
+\begin{DoxyItemize}
+\item Inherits from QWidget. It provides a desktop interface using Qt Widgets for users to interact with the Handmade Craft Store inventory. It delegates all business logic and data manipulation to the \doxylink{class_controller}{Controller} layer. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_u_i_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_u_i_aa37293fb2faa9fde9265df7e14bf1e83}\index{UI@{UI}!UI@{UI}}
+\index{UI@{UI}!UI@{UI}}
+\doxysubsubsection{\texorpdfstring{UI()}{UI()}}
+{\footnotesize\ttfamily \label{class_u_i_aa37293fb2faa9fde9265df7e14bf1e83} 
+UI::\+\+UI (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_controller}{Controller}} \&}]{controller}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs the \doxylink{class_u_i}{UI} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & A reference to the \doxylink{class_controller}{Controller} handling business logic. \\
+\hline
+{\em parent} & An optional parent widget (nullptr for the main window). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+UI.\+h\item 
+UI.\+cpp\end{DoxyCompactItemize}

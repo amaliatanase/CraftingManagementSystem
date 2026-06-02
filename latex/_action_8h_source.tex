@@ -1,0 +1,64 @@
+\doxysection{Action.\+h}
+\hypertarget{_action_8h_source}{}\label{_action_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Repository.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}CraftItem.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//Command\ Pattern:\ convert\ an\ action\ into\ an\ object}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//The\ Controller\ will\ keep\ a\ stack\ with\ pointers\ to\ the\ action\ objects}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//using\ polymorphism\ the\ stack\ will\ keep\ multiple\ types\ of\ actions}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_action}{Action}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//abstract\ class\ =\ interface}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_action_a280616e7a6e86d4f03a5d3ae372cd547}{execute}}()\ =\ 0;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_action_a1a9fbaad0549a068b97db44c51742bfc}{undo}}()\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_action_a74607eb18e62df17d5b24e8558ae7895}{redo}}()\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_action_abfc040fdc62410622a0e3835a713740f}{\string~Action}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_add_action_a68943ce749ba69cd5728c420489270a0}{AddAction}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_action}{Action}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ std::shared\_ptr<CraftItem>\ item;\ }
+\DoxyCodeLine{00047\ \ \ \ \ \doxymbox{\hyperlink{class_repository}{Repository}}\ \&repo;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \doxymbox{\hyperlink{class_add_action_a68943ce749ba69cd5728c420489270a0}{AddAction}}(std::shared\_ptr<CraftItem>\ item,\ \doxymbox{\hyperlink{class_repository}{Repository}}\ \&repo);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_add_action_aee34ec0787c94b5bdd101222612a8dcc}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_add_action_ae27fb86ff628618c703f2d0b89ab241e}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_add_action_ae13d35f81625fef31e477b2af15f2ff9}{redo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_remove_action_a4ee7e34b940d622f4db0efb6c28cc4a9}{RemoveAction}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_action}{Action}}\ \{}
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ std::shared\_ptr<CraftItem>\ item;\ }
+\DoxyCodeLine{00069\ \ \ \ \ \doxymbox{\hyperlink{class_repository}{Repository}}\ \&repo;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \doxymbox{\hyperlink{class_remove_action_a4ee7e34b940d622f4db0efb6c28cc4a9}{RemoveAction}}(std::shared\_ptr<CraftItem>\ item,\ \doxymbox{\hyperlink{class_repository}{Repository}}\ \&repo);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_remove_action_a8a606ed1c4bff1642764eb2cf29745ec}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_remove_action_a8f1bbc1caa6ecd55fd9ed98f24cae297}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_remove_action_a92a54a08c7d7182323ed4265053455b3}{redo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_update_action_ac0bea3793e3021820779e432d5ab7cc3}{UpdateAction}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_action}{Action}}\ \{}
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \ \ std::shared\_ptr<CraftItem>\ oldItem;\ }
+\DoxyCodeLine{00093\ \ \ \ \ std::shared\_ptr<CraftItem>\ newItem;\ }
+\DoxyCodeLine{00094\ \ \ \ \ \doxymbox{\hyperlink{class_repository}{Repository}}\ \&repo;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00103\ \ \ \ \ \doxymbox{\hyperlink{class_update_action_ac0bea3793e3021820779e432d5ab7cc3}{UpdateAction}}(std::shared\_ptr<CraftItem>\ oldItem,\ std::shared\_ptr<CraftItem>\ newItem,\ \doxymbox{\hyperlink{class_repository}{Repository}}\ \&repo);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_update_action_a61b22f62c5abcae38fbeaecf86ec2e28}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_update_action_a10b00d2dcccb72962e0e954afa381a19}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_update_action_afdaf99e93c350deab5820d818306a029}{redo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00108\ \};}
+
+\end{DoxyCode}

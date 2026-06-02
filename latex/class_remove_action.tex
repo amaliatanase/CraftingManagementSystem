@@ -1,0 +1,111 @@
+\doxysection{Remove\+Action Class Reference}
+\hypertarget{class_remove_action}{}\label{class_remove_action}\index{RemoveAction@{RemoveAction}}
+
+
+Encapsulates the logic for removing an existing \doxylink{class_craft_item}{Craft\+Item} from the repository.  
+
+
+
+
+{\ttfamily \+\#include $<$Action.\+h$>$}
+
+Inheritance diagram for Remove\+Action:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_remove_action}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_remove_action_a4ee7e34b940d622f4db0efb6c28cc4a9}{Remove\+Action}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item, \doxymbox{\hyperlink{class_repository}{Repository}} \&repo)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_remove_action}{Remove\+Action} object. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_remove_action_a8a606ed1c4bff1642764eb2cf29745ec}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the encapsulated action. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_remove_action_a8f1bbc1caa6ecd55fd9ed98f24cae297}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Reverts the effects of the executed action in the repository. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_remove_action_a92a54a08c7d7182323ed4265053455b3}{redo}} () override
+\begin{DoxyCompactList}\small\item\em Reapplies the action after it has been undone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_action}{Action}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Action} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor ensures safe polymorphic deletion of derived action objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Encapsulates the logic for removing an existing \doxylink{class_craft_item}{Craft\+Item} from the repository. 
+
+\label{doc-constructors}
+\Hypertarget{class_remove_action_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_remove_action_a4ee7e34b940d622f4db0efb6c28cc4a9}\index{RemoveAction@{RemoveAction}!RemoveAction@{RemoveAction}}
+\index{RemoveAction@{RemoveAction}!RemoveAction@{RemoveAction}}
+\doxysubsubsection{\texorpdfstring{RemoveAction()}{RemoveAction()}}
+{\footnotesize\ttfamily \label{class_remove_action_a4ee7e34b940d622f4db0efb6c28cc4a9} 
+Remove\+Action::\+\+Remove\+Action (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{, }\item[{\doxymbox{\hyperlink{class_repository}{Repository}} \&}]{repo}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_remove_action}{Remove\+Action} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} being targeted for deletion. \\
+\hline
+{\em repo} & A reference to the \doxylink{class_repository}{Repository} from which the item will be removed. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_remove_action_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_remove_action_a8a606ed1c4bff1642764eb2cf29745ec}\index{RemoveAction@{RemoveAction}!execute@{execute}}
+\index{execute@{execute}!RemoveAction@{RemoveAction}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_remove_action_a8a606ed1c4bff1642764eb2cf29745ec} 
+void Remove\+Action::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the encapsulated action. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a280616e7a6e86d4f03a5d3ae372cd547}{Action}}.
+
+\Hypertarget{class_remove_action_a92a54a08c7d7182323ed4265053455b3}\index{RemoveAction@{RemoveAction}!redo@{redo}}
+\index{redo@{redo}!RemoveAction@{RemoveAction}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily \label{class_remove_action_a92a54a08c7d7182323ed4265053455b3} 
+void Remove\+Action::\+redo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reapplies the action after it has been undone. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a74607eb18e62df17d5b24e8558ae7895}{Action}}.
+
+\Hypertarget{class_remove_action_a8f1bbc1caa6ecd55fd9ed98f24cae297}\index{RemoveAction@{RemoveAction}!undo@{undo}}
+\index{undo@{undo}!RemoveAction@{RemoveAction}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_remove_action_a8f1bbc1caa6ecd55fd9ed98f24cae297} 
+void Remove\+Action::\+undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reverts the effects of the executed action in the repository. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a1a9fbaad0549a068b97db44c51742bfc}{Action}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Action.\+h\item 
+Action.\+cpp\end{DoxyCompactItemize}

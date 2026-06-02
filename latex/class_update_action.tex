@@ -1,0 +1,118 @@
+\doxysection{Update\+Action Class Reference}
+\hypertarget{class_update_action}{}\label{class_update_action}\index{UpdateAction@{UpdateAction}}
+
+
+Encapsulates the logic for modifying an existing \doxylink{class_craft_item}{Craft\+Item} in the repository.  
+
+
+
+
+{\ttfamily \+\#include $<$Action.\+h$>$}
+
+Inheritance diagram for Update\+Action:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_update_action}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_update_action_ac0bea3793e3021820779e432d5ab7cc3}{Update\+Action}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ old\+Item, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ new\+Item, \doxymbox{\hyperlink{class_repository}{Repository}} \&repo)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_update_action}{Update\+Action} object. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_update_action_a61b22f62c5abcae38fbeaecf86ec2e28}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the encapsulated action. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_update_action_a10b00d2dcccb72962e0e954afa381a19}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Reverts the effects of the executed action in the repository. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_update_action_afdaf99e93c350deab5820d818306a029}{redo}} () override
+\begin{DoxyCompactList}\small\item\em Reapplies the action after it has been undone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_action}{Action}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Action} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor ensures safe polymorphic deletion of derived action objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Encapsulates the logic for modifying an existing \doxylink{class_craft_item}{Craft\+Item} in the repository. 
+
+
+\begin{DoxyItemize}
+\item Stores both the previous state and the new state of the item to guarantee accurate undo and redo operations. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_update_action_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_update_action_ac0bea3793e3021820779e432d5ab7cc3}\index{UpdateAction@{UpdateAction}!UpdateAction@{UpdateAction}}
+\index{UpdateAction@{UpdateAction}!UpdateAction@{UpdateAction}}
+\doxysubsubsection{\texorpdfstring{UpdateAction()}{UpdateAction()}}
+{\footnotesize\ttfamily \label{class_update_action_ac0bea3793e3021820779e432d5ab7cc3} 
+Update\+Action::\+\+Update\+Action (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{old\+Item}{, }\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{new\+Item}{, }\item[{\doxymbox{\hyperlink{class_repository}{Repository}} \&}]{repo}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_update_action}{Update\+Action} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Item} & A shared pointer containing the original attributes of the item. \\
+\hline
+{\em new\+Item} & A shared pointer containing the modified attributes of the item. \\
+\hline
+{\em repo} & A reference to the \doxylink{class_repository}{Repository} executing the update. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_update_action_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_update_action_a61b22f62c5abcae38fbeaecf86ec2e28}\index{UpdateAction@{UpdateAction}!execute@{execute}}
+\index{execute@{execute}!UpdateAction@{UpdateAction}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_update_action_a61b22f62c5abcae38fbeaecf86ec2e28} 
+void Update\+Action::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the encapsulated action. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a280616e7a6e86d4f03a5d3ae372cd547}{Action}}.
+
+\Hypertarget{class_update_action_afdaf99e93c350deab5820d818306a029}\index{UpdateAction@{UpdateAction}!redo@{redo}}
+\index{redo@{redo}!UpdateAction@{UpdateAction}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily \label{class_update_action_afdaf99e93c350deab5820d818306a029} 
+void Update\+Action::\+redo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reapplies the action after it has been undone. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a74607eb18e62df17d5b24e8558ae7895}{Action}}.
+
+\Hypertarget{class_update_action_a10b00d2dcccb72962e0e954afa381a19}\index{UpdateAction@{UpdateAction}!undo@{undo}}
+\index{undo@{undo}!UpdateAction@{UpdateAction}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_update_action_a10b00d2dcccb72962e0e954afa381a19} 
+void Update\+Action::\+undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reverts the effects of the executed action in the repository. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a1a9fbaad0549a068b97db44c51742bfc}{Action}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Action.\+h\item 
+Action.\+cpp\end{DoxyCompactItemize}

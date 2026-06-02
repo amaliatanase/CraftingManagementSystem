@@ -1,0 +1,92 @@
+\doxysection{And\+Filter Class Reference}
+\hypertarget{class_and_filter}{}\label{class_and_filter}\index{AndFilter@{AndFilter}}
+
+
+A composite filter that applies a logical AND operation between two filters.  
+
+
+
+
+{\ttfamily \+\#include $<$Filter.\+h$>$}
+
+Inheritance diagram for And\+Filter:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_and_filter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_and_filter_ab4fdb3d79079aefd6edf334a4fb6c73f}{And\+Filter}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_filter}{Filter}} $>$ f1, std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_filter}{Filter}} $>$ f2)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_and_filter}{And\+Filter} linking two abstract filters. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_and_filter_a6f079d290310751b128febcabf9cbbbd}{matches}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item) const override
+\begin{DoxyCompactList}\small\item\em Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_filter}{Filter}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Filter} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure safe polymorphic deletion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A composite filter that applies a logical AND operation between two filters. 
+
+
+\begin{DoxyItemize}
+\item This class uses the Composite Design Pattern to treat a group of filters exactly as a single filter. It evaluates to true only if both child filters evaluate to true. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_and_filter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_and_filter_ab4fdb3d79079aefd6edf334a4fb6c73f}\index{AndFilter@{AndFilter}!AndFilter@{AndFilter}}
+\index{AndFilter@{AndFilter}!AndFilter@{AndFilter}}
+\doxysubsubsection{\texorpdfstring{AndFilter()}{AndFilter()}}
+{\footnotesize\ttfamily \label{class_and_filter_ab4fdb3d79079aefd6edf334a4fb6c73f} 
+And\+Filter::\+\+And\+Filter (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_filter}{Filter}} $>$}]{f1}{, }\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_filter}{Filter}} $>$}]{f2}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_and_filter}{And\+Filter} linking two abstract filters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f1} & A shared pointer to the first \doxylink{class_filter}{Filter} object. \\
+\hline
+{\em f2} & A shared pointer to the second \doxylink{class_filter}{Filter} object. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_and_filter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_and_filter_a6f079d290310751b128febcabf9cbbbd}\index{AndFilter@{AndFilter}!matches@{matches}}
+\index{matches@{matches}!AndFilter@{AndFilter}}
+\doxysubsubsection{\texorpdfstring{matches()}{matches()}}
+{\footnotesize\ttfamily \label{class_and_filter_a6f079d290310751b128febcabf9cbbbd} 
+bool And\+Filter::\+matches (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates whether a given item satisfies the filter\textquotesingle{}s criteria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} being evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item matches the criteria, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_filter_ae428863f9eb6711fc1975b7dd1b5a480}{Filter}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Filter.\+h\item 
+Filter.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+\doxysection{Repository\+Factory Class Reference}
+\hypertarget{class_repository_factory}{}\label{class_repository_factory}\index{RepositoryFactory@{RepositoryFactory}}
+
+
+Factory class for creating repository instances.  
+
+
+
+
+{\ttfamily \+\#include $<$Repository\+Factory.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{class_repository}{Repository}} $>$ \doxymbox{\hyperlink{class_repository_factory_a0cb04c7c4c62a97661e038ea35ee93b6}{create}} (const std::\+string \&repo\+Type, const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Creates and returns a concrete \doxylink{class_repository}{Repository} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating repository instances. 
+
+
+\begin{DoxyItemize}
+\item This class implements the Factory Design Pattern. It centralizes the creation logic for repository objects, allowing the application to easily switch between different storage formats (like CSV or JSON) without changing the core business logic. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_repository_factory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_repository_factory_a0cb04c7c4c62a97661e038ea35ee93b6}\index{RepositoryFactory@{RepositoryFactory}!create@{create}}
+\index{create@{create}!RepositoryFactory@{RepositoryFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_repository_factory_a0cb04c7c4c62a97661e038ea35ee93b6} 
+std::\+unique\+\_\+ptr$<$ \doxymbox{\hyperlink{class_repository}{Repository}} $>$ Repository\+Factory::\+create (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{repo\+Type}{, }\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates and returns a concrete \doxylink{class_repository}{Repository} instance. 
+
+
+\begin{DoxyItemize}
+\item Based on the provided repository type, this method instantiates the appropriate subclass (e.\+g., Repository\+CSV or Repository\+JSON). 
+\begin{DoxyParams}{Parameters}
+{\em repo\+Type} & A string representing the type of repository to create (e.\+g., "{}csv"{}, "{}json"{}). \\
+\hline
+{\em filename} & The name of the file where the repository will store its data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A unique pointer to the instantiated \doxylink{class_repository}{Repository}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+invalid\+\_\+argument} & If the requested repo\+Type is unknown or unsupported. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Repository\+Factory.\+h\item 
+Repository\+Factory.\+cpp\end{DoxyCompactItemize}

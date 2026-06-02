@@ -1,0 +1,196 @@
+\doxysection{Repository Class Reference}
+\hypertarget{class_repository}{}\label{class_repository}\index{Repository@{Repository}}
+
+
+Base class for managing the storage and retrieval of \doxylink{class_craft_item}{Craft\+Item} objects.  
+
+
+
+
+{\ttfamily \+\#include $<$Repository.\+h$>$}
+
+Inheritance diagram for Repository:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_repository_a77b412b5742670069a2acbcacf324f92}\label{class_repository_a77b412b5742670069a2acbcacf324f92} 
+{\bfseries Repository} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_repository_a183c8d8f6e230c1d27d3087163fbe71d}\label{class_repository_a183c8d8f6e230c1d27d3087163fbe71d} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Repository} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure safe polymorphic deletion of derived repositories. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_repository_a7664a3ec6a9da19683649833fff1a94e}{add}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item)
+\begin{DoxyCompactList}\small\item\em Adds a new item to the repository. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_repository_a33730fe1592261b1d9b42dab8afb15ff}{remove}} (int id)
+\begin{DoxyCompactList}\small\item\em Removes an item from the repository based on its ID. \end{DoxyCompactList}\item 
+virtual void \doxymbox{\hyperlink{class_repository_a0153d29532664e58cd9564758daadfa0}{update}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ new\+Item)
+\begin{DoxyCompactList}\small\item\em Updates an existing item in the repository. \end{DoxyCompactList}\item 
+virtual std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ \doxymbox{\hyperlink{class_repository_ad73f3f9ecb9acf694d8ec0f18c57f6fc}{find}} (int id)
+\begin{DoxyCompactList}\small\item\em Searches for an item in the repository by its ID. \end{DoxyCompactList}\item 
+virtual std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ \doxymbox{\hyperlink{class_repository_ac81678f667edace4788fe09486ac888a}{get\+All}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves all items currently stored in the repository. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \doxymbox{\hyperlink{class_repository_a449e373b1b703ad5bb29083779134a01}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of items in the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ \doxymbox{\hyperlink{class_repository_a2772a809f28bd671e8e1d32a4e7ca7fd}{items}}
+\begin{DoxyCompactList}\small\item\em Internal storage for the craft items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for managing the storage and retrieval of \doxylink{class_craft_item}{Craft\+Item} objects. 
+
+
+\begin{DoxyItemize}
+\item This class acts as the lowest layer in the architecture, providing an in-\/memory data structure to manage items. It uses virtual methods to allow derived classes (like CSV or JSON repositories) to override behaviors and implement persistent storage. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_repository_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_repository_a7664a3ec6a9da19683649833fff1a94e}\index{Repository@{Repository}!add@{add}}
+\index{add@{add}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \label{class_repository_a7664a3ec6a9da19683649833fff1a94e} 
+void Repository::\+add (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a new item to the repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} to be added. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If an item with the same ID already exists. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \doxymbox{\hyperlink{class_repository_file_a98302817a6316c04a1d16f52dc389056}{Repository\+File}}.
+
+\Hypertarget{class_repository_ad73f3f9ecb9acf694d8ec0f18c57f6fc}\index{Repository@{Repository}!find@{find}}
+\index{find@{find}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{class_repository_ad73f3f9ecb9acf694d8ec0f18c57f6fc} 
+std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ Repository::\+find (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Searches for an item in the repository by its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the item to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A shared pointer to the found item, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_repository_ac81678f667edace4788fe09486ac888a}\index{Repository@{Repository}!getAll@{getAll}}
+\index{getAll@{getAll}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily \label{class_repository_ac81678f667edace4788fe09486ac888a} 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ Repository::\+get\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves all items currently stored in the repository. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing shared pointers to all craft items. 
+\end{DoxyReturn}
+\Hypertarget{class_repository_a449e373b1b703ad5bb29083779134a01}\index{Repository@{Repository}!getSize@{getSize}}
+\index{getSize@{getSize}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{class_repository_a449e373b1b703ad5bb29083779134a01} 
+size\+\_\+t Repository::\+get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the total number of items in the repository. 
+
+\begin{DoxyReturn}{Returns}
+The count of items. 
+\end{DoxyReturn}
+\Hypertarget{class_repository_a33730fe1592261b1d9b42dab8afb15ff}\index{Repository@{Repository}!remove@{remove}}
+\index{remove@{remove}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \label{class_repository_a33730fe1592261b1d9b42dab8afb15ff} 
+void Repository::\+remove (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes an item from the repository based on its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the item to remove. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If the item with the specified ID is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \doxymbox{\hyperlink{class_repository_file_ad0262ba1e912a594c45dbcf29228033d}{Repository\+File}}.
+
+\Hypertarget{class_repository_a0153d29532664e58cd9564758daadfa0}\index{Repository@{Repository}!update@{update}}
+\index{update@{update}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_repository_a0153d29532664e58cd9564758daadfa0} 
+void Repository::\+update (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{new\+Item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates an existing item in the repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Item} & A shared pointer containing the updated state of the \doxylink{class_craft_item}{Craft\+Item}. The ID inside the item is used to find the old object. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If the item to be updated is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented in \doxymbox{\hyperlink{class_repository_file_a1ab985ec563040fe6a938c28dcec22b1}{Repository\+File}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_repository_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_repository_a2772a809f28bd671e8e1d32a4e7ca7fd}\index{Repository@{Repository}!items@{items}}
+\index{items@{items}!Repository@{Repository}}
+\doxysubsubsection{\texorpdfstring{items}{items}}
+{\footnotesize\ttfamily \label{class_repository_a2772a809f28bd671e8e1d32a4e7ca7fd} 
+std::\+vector$<$std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{class_craft_item}{Craft\+Item}}$>$ $>$ Repository::\+items\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Internal storage for the craft items. 
+
+
+\begin{DoxyItemize}
+\item Uses shared pointers to prevent memory leaks and to safely maintain references to items (even deleted ones) for the Undo/\+\+Redo command history. It is protected so that derived file-\/based repositories can easily access and serialize the data. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Repository.\+h\item 
+Repository.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,37 @@
+\doxysection{Repository.\+h}
+\hypertarget{_repository_8h_source}{}\label{_repository_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}CraftItem.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_repository_a77b412b5742670069a2acbcacf324f92}{Repository}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ using\ shared\ pointers\ to\ avoid\ memory\ leaks\ and}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ to\ have\ acces\ at\ deleted\ items\ for\ the\ undo\ action}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ protected\ so\ the\ derived\ classes\ can\ acces\ them}}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<std::shared\_ptr<CraftItem>>\ \doxymbox{\hyperlink{class_repository_a2772a809f28bd671e8e1d32a4e7ca7fd}{items}};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \doxymbox{\hyperlink{class_repository_a77b412b5742670069a2acbcacf324f92}{Repository}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_repository_a183c8d8f6e230c1d27d3087163fbe71d}{\string~Repository}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_a7664a3ec6a9da19683649833fff1a94e}{add}}(std::shared\_ptr<CraftItem>\ item);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_a33730fe1592261b1d9b42dab8afb15ff}{remove}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_a0153d29532664e58cd9564758daadfa0}{update}}(std::shared\_ptr<CraftItem>\ newItem);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ std::shared\_ptr<CraftItem>\ \doxymbox{\hyperlink{class_repository_ad73f3f9ecb9acf694d8ec0f18c57f6fc}{find}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<std::shared\_ptr<CraftItem>>\ \doxymbox{\hyperlink{class_repository_ac81678f667edace4788fe09486ac888a}{getAll}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{class_repository_a449e373b1b703ad5bb29083779134a01}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ helper\ function\ that\ returns\ the\ position\ of\ an\ item\ in\ the\ items\ vector\ by\ a\ given\ id}}
+\DoxyCodeLine{00084\ \ \ \ \ std::vector<std::shared\_ptr<CraftItem>>::iterator\ findIterator(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00085\ \};}
+
+\end{DoxyCode}

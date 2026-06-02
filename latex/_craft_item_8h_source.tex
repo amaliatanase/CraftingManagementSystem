@@ -1,0 +1,46 @@
+\doxysection{Craft\+Item.\+h}
+\hypertarget{_craft_item_8h_source}{}\label{_craft_item_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{enum\ class}\ Category\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ Material,\ \ \ }
+\DoxyCodeLine{00010\ \ \ \ \ Tool,\ \ \ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ Blank,\ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ Packaging\ \ \ }
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_craft_item_a97dfd750ed7fbf43c0915ca68733bb2c}{CraftItem}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ id;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ name;\ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ Category\ category;\ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ price;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ quantity;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \doxymbox{\hyperlink{class_craft_item_a97dfd750ed7fbf43c0915ca68733bb2c}{CraftItem}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\ \&name,\ Category\ category,\ \textcolor{keywordtype}{double}\ price,\ \textcolor{keywordtype}{int}\ quantity);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_craft_item_ab278abdc6341d56da177c577eaef06c2}{getID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \doxymbox{\hyperlink{class_craft_item_ab8d9f00f330588fd3144c1cac58ec3e9}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ Category\ \doxymbox{\hyperlink{class_craft_item_a1bb5c4bf846cf3e4a9c27ca930c78b92}{getCategory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_craft_item_a8d092b5cbebd791f86136363ce97faa3}{getPrice}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_craft_item_a08c8ccb7507ef880a7f519d1c2e6e534}{getQuantity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_craft_item_a9f5048f6469affffe0101c421739a57e}{setPrice}}(\textcolor{keywordtype}{double}\ newPrice);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_craft_item_a13195313918fb75a7c8327059a71ff06}{setQuantity}}(\textcolor{keywordtype}{int}\ newQuantity);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \ \ std::string\ \doxymbox{\hyperlink{class_craft_item_a65e17dbc03ce500d817079e93f86042a}{getCategoryAsString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{static}\ Category\ \doxymbox{\hyperlink{class_craft_item_a2237451bc490a7e96a4d007358e2144e}{stringToCategory}}(\textcolor{keyword}{const}\ std::string\&\ categoryStr);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \doxymbox{\hyperlink{class_craft_item_a835ace1cb1377e89b9c88e3cf41f9924}{\string~CraftItem}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00103\ \};}
+
+\end{DoxyCode}

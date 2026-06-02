@@ -1,0 +1,48 @@
+\doxysection{Tests Class Reference}
+\hypertarget{class_tests}{}\label{class_tests}\index{Tests@{Tests}}
+
+
+A utility class containing automated tests for the application.  
+
+
+
+
+{\ttfamily \+\#include $<$Tests.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{class_tests_ab751a183f1f6f5c3466ef2d1d406898e}{run\+All\+Tests}} ()
+\begin{DoxyCompactList}\small\item\em Executes all the automated test suites sequentially. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class containing automated tests for the application. 
+
+
+\begin{DoxyItemize}
+\item This class groups together all the unit tests required to validate the core functionality of the \doxylink{class_repository}{Repository} and \doxylink{class_controller}{Controller} layers. It uses standard C++ assertions to ensure that CRUD operations, undo/\+redo mechanisms, and filters work correctly before the graphical interface is launched. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_tests_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tests_ab751a183f1f6f5c3466ef2d1d406898e}\index{Tests@{Tests}!runAllTests@{runAllTests}}
+\index{runAllTests@{runAllTests}!Tests@{Tests}}
+\doxysubsubsection{\texorpdfstring{runAllTests()}{runAllTests()}}
+{\footnotesize\ttfamily \label{class_tests_ab751a183f1f6f5c3466ef2d1d406898e} 
+void Tests::\+run\+All\+Tests (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Executes all the automated test suites sequentially. 
+
+
+\begin{DoxyItemize}
+\item If any assertion fails during execution, the program will terminate immediately, pointing to the exact line where the bug occurred. If all tests pass, it prints a success message to the console. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Tests.\+h\item 
+Tests.\+cpp\end{DoxyCompactItemize}

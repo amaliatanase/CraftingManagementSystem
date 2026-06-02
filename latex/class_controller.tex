@@ -1,0 +1,210 @@
+\doxysection{Controller Class Reference}
+\hypertarget{class_controller}{}\label{class_controller}\index{Controller@{Controller}}
+
+
+Handles the business logic of the application.  
+
+
+
+
+{\ttfamily \+\#include $<$Controller.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_controller_a599e43d298dfa30b28337bdd6cb5693b}{Controller}} (\doxymbox{\hyperlink{class_repository}{Repository}} \&repo)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_controller}{Controller} object. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_controller_a52b8812ceca0b4368dea2e2b4399d860}{undo}} ()
+\begin{DoxyCompactList}\small\item\em Reverts the last executed action. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_controller_aeb55fe16b48f14b00c179e95a0372a17}{redo}} ()
+\begin{DoxyCompactList}\small\item\em Reapplies the last undone action. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_controller_ae225224cbc5f20cf0f52a3f9816f8d0b}{delete\+Item}} (int id)
+\begin{DoxyCompactList}\small\item\em Creates and adds a new \doxylink{class_craft_item}{Craft\+Item} to the store. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_controller_a0ea28855f462dbd9ae99e2279762fe29}{update\+Item}} (int id, const std::\+string \&new\+Name, Category new\+Category, double new\+Price, int new\+Quantity)
+\begin{DoxyCompactList}\small\item\em Modifies the attributes of an existing \doxylink{class_craft_item}{Craft\+Item}. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ \doxymbox{\hyperlink{class_controller_ad30f2bd11d5addb84e5bcacc4228d895}{get\+All\+Items}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves all items currently stored in the repository. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ \doxymbox{\hyperlink{class_controller_a2138496c86ed20c4d1f8cd2899def6fc}{filter\+Items}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_filter}{Filter}} $>$ filter) const
+\begin{DoxyCompactList}\small\item\em Filters the items in the repository based on specific criteria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the business logic of the application. 
+
+
+\begin{DoxyItemize}
+\item The \doxylink{class_controller}{Controller} acts as a bridge between the User Interface and the \doxylink{class_repository}{Repository}. It manages CRUD operations, handles data validation, executes undo/\+redo functionality using the Command Design Pattern, and applies filtering logic. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_controller_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_controller_a599e43d298dfa30b28337bdd6cb5693b}\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily \label{class_controller_a599e43d298dfa30b28337bdd6cb5693b} 
+Controller::\+\+Controller (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_repository}{Repository}} \&}]{repo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_controller}{Controller} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em repo} & A reference to the \doxylink{class_repository}{Repository} to be manipulated. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_controller_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_controller_ae225224cbc5f20cf0f52a3f9816f8d0b}\index{Controller@{Controller}!deleteItem@{deleteItem}}
+\index{deleteItem@{deleteItem}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{deleteItem()}{deleteItem()}}
+{\footnotesize\ttfamily \label{class_controller_ae225224cbc5f20cf0f52a3f9816f8d0b} 
+void Controller::\+delete\+Item (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Creates and adds a new \doxylink{class_craft_item}{Craft\+Item} to the store. 
+
+
+\begin{DoxyItemize}
+\item Validates the input data and creates an \doxylink{class_add_action}{Add\+Action}. The action is executed and saved in the undo stack. The redo stack is cleared. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier for the new item. \\
+\hline
+{\em name} & The name of the product. \\
+\hline
+{\em category} & The category of the item. \\
+\hline
+{\em price} & The price of the item. Must be \texorpdfstring{$>$}{>}= 0. \\
+\hline
+{\em quantity} & The stock available. Must be \texorpdfstring{$>$}{>}= 0. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If data validation fails (e.\+g., negative price or empty name).\\
+\hline
+\end{DoxyExceptions}
+Deletes a \doxylink{class_craft_item}{Craft\+Item} from the store by its ID.
+\item Searches for the item, creates a \doxylink{class_remove_action}{Remove\+Action}, executes it, and saves it to the undo stack. The redo stack is cleared. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the item to be removed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If the item with the specified ID is not found. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}\Hypertarget{class_controller_a2138496c86ed20c4d1f8cd2899def6fc}\index{Controller@{Controller}!filterItems@{filterItems}}
+\index{filterItems@{filterItems}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{filterItems()}{filterItems()}}
+{\footnotesize\ttfamily \label{class_controller_a2138496c86ed20c4d1f8cd2899def6fc} 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ Controller::\+filter\+Items (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_filter}{Filter}} $>$}]{filter}{}\end{DoxyParamCaption}) const}
+
+
+
+Filters the items in the repository based on specific criteria. 
+
+
+\begin{DoxyItemize}
+\item Uses the Specification/\+\+Strategy Design Pattern by accepting a polymorphic \doxylink{class_filter}{Filter} object that evaluates each item. 
+\begin{DoxyParams}{Parameters}
+{\em filter} & A shared pointer to a concrete \doxylink{class_filter}{Filter} object (e.\+g., \doxylink{class_name_filter}{Name\+Filter}, \doxylink{class_and_filter}{And\+Filter}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to Craft\+Items that match the filter criteria. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{class_controller_ad30f2bd11d5addb84e5bcacc4228d895}\index{Controller@{Controller}!getAllItems@{getAllItems}}
+\index{getAllItems@{getAllItems}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{getAllItems()}{getAllItems()}}
+{\footnotesize\ttfamily \label{class_controller_ad30f2bd11d5addb84e5bcacc4228d895} 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ Controller::\+get\+All\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves all items currently stored in the repository. 
+
+\begin{DoxyReturn}{Returns}
+A vector of shared pointers to all Craft\+Items. 
+\end{DoxyReturn}
+\Hypertarget{class_controller_aeb55fe16b48f14b00c179e95a0372a17}\index{Controller@{Controller}!redo@{redo}}
+\index{redo@{redo}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily \label{class_controller_aeb55fe16b48f14b00c179e95a0372a17} 
+void Controller::\+redo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reapplies the last undone action. 
+
+
+\begin{DoxyItemize}
+\item Pops the top action from the redo stack, executes its redo logic, and pushes it back onto the undo stack. Throws an error if the stack is empty. 
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If there are no actions to redo. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}\Hypertarget{class_controller_a52b8812ceca0b4368dea2e2b4399d860}\index{Controller@{Controller}!undo@{undo}}
+\index{undo@{undo}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_controller_a52b8812ceca0b4368dea2e2b4399d860} 
+void Controller::\+undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reverts the last executed action. 
+
+
+\begin{DoxyItemize}
+\item Pops the top action from the undo stack, executes its undo logic, and pushes it onto the redo stack. Throws an error if the stack is empty. 
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If there are no actions to undo. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}\Hypertarget{class_controller_a0ea28855f462dbd9ae99e2279762fe29}\index{Controller@{Controller}!updateItem@{updateItem}}
+\index{updateItem@{updateItem}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{updateItem()}{updateItem()}}
+{\footnotesize\ttfamily \label{class_controller_a0ea28855f462dbd9ae99e2279762fe29} 
+void Controller::\+update\+Item (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{const std::\+string \&}]{new\+Name}{, }\item[{Category}]{new\+Category}{, }\item[{double}]{new\+Price}{, }\item[{int}]{new\+Quantity}{}\end{DoxyParamCaption})}
+
+
+
+Modifies the attributes of an existing \doxylink{class_craft_item}{Craft\+Item}. 
+
+
+\begin{DoxyItemize}
+\item Locates the old state of the item, constructs a new state with the provided arguments, and creates an \doxylink{class_update_action}{Update\+Action}. The action is executed and saved in the undo stack. The redo stack is cleared. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the item to update. \\
+\hline
+{\em new\+Name} & The updated name. \\
+\hline
+{\em new\+Category} & The updated category. \\
+\hline
+{\em new\+Price} & The updated price. Must be \texorpdfstring{$>$}{>}= 0. \\
+\hline
+{\em new\+Quantity} & The updated quantity. Must be \texorpdfstring{$>$}{>}= 0. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & If validation fails or the ID does not exist. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Controller.\+h\item 
+Controller.\+cpp\end{DoxyCompactItemize}

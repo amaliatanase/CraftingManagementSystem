@@ -1,0 +1,130 @@
+\doxysection{Repository\+File\+JSON Class Reference}
+\hypertarget{class_repository_file_j_s_o_n}{}\label{class_repository_file_j_s_o_n}\index{RepositoryFileJSON@{RepositoryFileJSON}}
+
+
+Concrete repository class that manages data in JSON format.  
+
+
+
+
+{\ttfamily \+\#include $<$Repository\+File.\+h$>$}
+
+Inheritance diagram for Repository\+File\+JSON:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_repository_file_j_s_o_n}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_repository_file_j_s_o_n_a7095a64c92ab0e9ac0ce95e58594d2a4}{Repository\+File\+JSON}} (const std::\+string \&file)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_repository_file_j_s_o_n}{Repository\+File\+JSON} object and loads existing data from the file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_repository_file_j_s_o_n_a83ccf899c2620e7fc7fed9cc26ff6ff8}{load\+From\+File}} () override
+\begin{DoxyCompactList}\small\item\em Loads craft items from the JSON file into the repository memory. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_repository_file_j_s_o_n_afa918bcde0b528eaa8188f460904db04}{save\+To\+File}} () override
+\begin{DoxyCompactList}\small\item\em Saves the current memory state of the repository into the JSON file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_repository_file}{Repository\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_repository_file_a2338677cda3083e9ebfd21f3ce2639d4}{Repository\+File}} (const std::\+string \&file)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_repository_file}{Repository\+File} object. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Repository\+File} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_repository_file_a98302817a6316c04a1d16f52dc389056}{add}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item) override
+\begin{DoxyCompactList}\small\item\em Adds an item to the repository and saves the updated list to the file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_repository_file_ad0262ba1e912a594c45dbcf29228033d}{remove}} (int id) override
+\begin{DoxyCompactList}\small\item\em Removes an item from the repository by ID and saves the updated list to the file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_repository_file_a1ab985ec563040fe6a938c28dcec22b1}{update}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ new\+Item) override
+\begin{DoxyCompactList}\small\item\em Updates an item in the repository and saves the updated list to the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_repository}{Repository}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Repository} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Repository} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure safe polymorphic deletion of derived repositories. \end{DoxyCompactList}\item 
+virtual std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ \doxymbox{\hyperlink{class_repository_ad73f3f9ecb9acf694d8ec0f18c57f6fc}{find}} (int id)
+\begin{DoxyCompactList}\small\item\em Searches for an item in the repository by its ID. \end{DoxyCompactList}\item 
+virtual std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ \doxymbox{\hyperlink{class_repository_ac81678f667edace4788fe09486ac888a}{get\+All}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves all items currently stored in the repository. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \doxymbox{\hyperlink{class_repository_a449e373b1b703ad5bb29083779134a01}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of items in the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_repository_file}{Repository\+File}}}
+\begin{DoxyCompactItemize}
+\item 
+std::\+string {\bfseries filename}
+\begin{DoxyCompactList}\small\item\em The name or path of the file used for persistent storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_repository}{Repository}}}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ $>$ \doxymbox{\hyperlink{class_repository_a2772a809f28bd671e8e1d32a4e7ca7fd}{items}}
+\begin{DoxyCompactList}\small\item\em Internal storage for the craft items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete repository class that manages data in JSON format. 
+
+
+\begin{DoxyItemize}
+\item Uses the Qt JSON library (QJson\+Document, QJson\+Object, QJson\+Array) for parsing and serialization. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_repository_file_j_s_o_n_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_repository_file_j_s_o_n_a7095a64c92ab0e9ac0ce95e58594d2a4}\index{RepositoryFileJSON@{RepositoryFileJSON}!RepositoryFileJSON@{RepositoryFileJSON}}
+\index{RepositoryFileJSON@{RepositoryFileJSON}!RepositoryFileJSON@{RepositoryFileJSON}}
+\doxysubsubsection{\texorpdfstring{RepositoryFileJSON()}{RepositoryFileJSON()}}
+{\footnotesize\ttfamily \label{class_repository_file_j_s_o_n_a7095a64c92ab0e9ac0ce95e58594d2a4} 
+Repository\+File\+JSON::\+\+Repository\+File\+JSON (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_repository_file_j_s_o_n}{Repository\+File\+JSON} object and loads existing data from the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The path/\+name of the JSON file. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_repository_file_j_s_o_n_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_repository_file_j_s_o_n_a83ccf899c2620e7fc7fed9cc26ff6ff8}\index{RepositoryFileJSON@{RepositoryFileJSON}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!RepositoryFileJSON@{RepositoryFileJSON}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily \label{class_repository_file_j_s_o_n_a83ccf899c2620e7fc7fed9cc26ff6ff8} 
+void Repository\+File\+JSON::\+load\+From\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads craft items from the JSON file into the repository memory. 
+
+
+
+Implements \doxymbox{\hyperlink{class_repository_file_aa53595522c611cc0ac7f5a1def47a415}{Repository\+File}}.
+
+\Hypertarget{class_repository_file_j_s_o_n_afa918bcde0b528eaa8188f460904db04}\index{RepositoryFileJSON@{RepositoryFileJSON}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!RepositoryFileJSON@{RepositoryFileJSON}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily \label{class_repository_file_j_s_o_n_afa918bcde0b528eaa8188f460904db04} 
+void Repository\+File\+JSON::\+save\+To\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Saves the current memory state of the repository into the JSON file. 
+
+
+
+Implements \doxymbox{\hyperlink{class_repository_file_aacaa9e4c2017ee71f56b8b8b715863c8}{Repository\+File}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Repository\+File.\+h\item 
+Repository\+File.\+cpp\end{DoxyCompactItemize}

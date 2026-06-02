@@ -1,0 +1,46 @@
+\doxysection{Repository\+File.\+h}
+\hypertarget{_repository_file_8h_source}{}\label{_repository_file_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Repository.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_repository_file_a2338677cda3083e9ebfd21f3ce2639d4}{RepositoryFile}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_repository_a77b412b5742670069a2acbcacf324f92}{Repository}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ \doxymbox{\hyperlink{class_repository_file_a901ca4d00023f2ac525c3298da5aa2bd}{filename}};\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_repository_file_a2338677cda3083e9ebfd21f3ce2639d4}{RepositoryFile}}(\textcolor{keyword}{const}\ std::string\&\ file);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_repository_file_a574a47f3b536658c92e3d34c42554e71}{\string~RepositoryFile}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_aa53595522c611cc0ac7f5a1def47a415}{loadFromFile}}()\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_aacaa9e4c2017ee71f56b8b8b715863c8}{saveToFile}}()\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_a98302817a6316c04a1d16f52dc389056}{add}}(std::shared\_ptr<CraftItem>\ item)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_ad0262ba1e912a594c45dbcf29228033d}{remove}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_a1ab985ec563040fe6a938c28dcec22b1}{update}}(std::shared\_ptr<CraftItem>\ newItem)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_repository_file_c_s_v_ab344c04c4ab69c0977b67f9a176e7742}{RepositoryFileCSV}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_repository_file_a2338677cda3083e9ebfd21f3ce2639d4}{RepositoryFile}}\ \{}
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_repository_file_c_s_v_ab344c04c4ab69c0977b67f9a176e7742}{RepositoryFileCSV}}(\textcolor{keyword}{const}\ std::string\&\ file);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_c_s_v_ab42fbfaf51480e78b857acf15da77f7f}{loadFromFile}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_c_s_v_a4a14a6c71f2e8daf06deefba9734090c}{saveToFile}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_repository_file_j_s_o_n_a7095a64c92ab0e9ac0ce95e58594d2a4}{RepositoryFileJSON}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_repository_file_a2338677cda3083e9ebfd21f3ce2639d4}{RepositoryFile}}\ \{}
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_repository_file_j_s_o_n_a7095a64c92ab0e9ac0ce95e58594d2a4}{RepositoryFileJSON}}(\textcolor{keyword}{const}\ std::string\&\ file);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_j_s_o_n_a83ccf899c2620e7fc7fed9cc26ff6ff8}{loadFromFile}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_repository_file_j_s_o_n_afa918bcde0b528eaa8188f460904db04}{saveToFile}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00105\ \};}
+
+\end{DoxyCode}

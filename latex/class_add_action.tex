@@ -1,0 +1,111 @@
+\doxysection{Add\+Action Class Reference}
+\hypertarget{class_add_action}{}\label{class_add_action}\index{AddAction@{AddAction}}
+
+
+Encapsulates the logic for adding a new \doxylink{class_craft_item}{Craft\+Item} to the repository.  
+
+
+
+
+{\ttfamily \+\#include $<$Action.\+h$>$}
+
+Inheritance diagram for Add\+Action:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_add_action}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_add_action_a68943ce749ba69cd5728c420489270a0}{Add\+Action}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$ item, \doxymbox{\hyperlink{class_repository}{Repository}} \&repo)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_add_action}{Add\+Action} object. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_add_action_aee34ec0787c94b5bdd101222612a8dcc}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executes the encapsulated action. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_add_action_ae27fb86ff628618c703f2d0b89ab241e}{undo}} () override
+\begin{DoxyCompactList}\small\item\em Reverts the effects of the executed action in the repository. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_add_action_ae13d35f81625fef31e477b2af15f2ff9}{redo}} () override
+\begin{DoxyCompactList}\small\item\em Reapplies the action after it has been undone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_action}{Action}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Action} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor ensures safe polymorphic deletion of derived action objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Encapsulates the logic for adding a new \doxylink{class_craft_item}{Craft\+Item} to the repository. 
+
+\label{doc-constructors}
+\Hypertarget{class_add_action_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_add_action_a68943ce749ba69cd5728c420489270a0}\index{AddAction@{AddAction}!AddAction@{AddAction}}
+\index{AddAction@{AddAction}!AddAction@{AddAction}}
+\doxysubsubsection{\texorpdfstring{AddAction()}{AddAction()}}
+{\footnotesize\ttfamily \label{class_add_action_a68943ce749ba69cd5728c420489270a0} 
+Add\+Action::\+\+Add\+Action (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{class_craft_item}{Craft\+Item}} $>$}]{item}{, }\item[{\doxymbox{\hyperlink{class_repository}{Repository}} \&}]{repo}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_add_action}{Add\+Action} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A shared pointer to the \doxylink{class_craft_item}{Craft\+Item} being added. \\
+\hline
+{\em repo} & A reference to the \doxylink{class_repository}{Repository} handling the data storage. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_add_action_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_add_action_aee34ec0787c94b5bdd101222612a8dcc}\index{AddAction@{AddAction}!execute@{execute}}
+\index{execute@{execute}!AddAction@{AddAction}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_add_action_aee34ec0787c94b5bdd101222612a8dcc} 
+void Add\+Action::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the encapsulated action. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a280616e7a6e86d4f03a5d3ae372cd547}{Action}}.
+
+\Hypertarget{class_add_action_ae13d35f81625fef31e477b2af15f2ff9}\index{AddAction@{AddAction}!redo@{redo}}
+\index{redo@{redo}!AddAction@{AddAction}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily \label{class_add_action_ae13d35f81625fef31e477b2af15f2ff9} 
+void Add\+Action::\+redo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reapplies the action after it has been undone. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a74607eb18e62df17d5b24e8558ae7895}{Action}}.
+
+\Hypertarget{class_add_action_ae27fb86ff628618c703f2d0b89ab241e}\index{AddAction@{AddAction}!undo@{undo}}
+\index{undo@{undo}!AddAction@{AddAction}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_add_action_ae27fb86ff628618c703f2d0b89ab241e} 
+void Add\+Action::\+undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reverts the effects of the executed action in the repository. 
+
+
+
+Implements \doxymbox{\hyperlink{class_action_a1a9fbaad0549a068b97db44c51742bfc}{Action}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Action.\+h\item 
+Action.\+cpp\end{DoxyCompactItemize}

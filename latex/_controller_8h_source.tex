@@ -1,0 +1,37 @@
+\doxysection{Controller.\+h}
+\hypertarget{_controller_8h_source}{}\label{_controller_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Action.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Repository.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_filter}{Filter}};\ \textcolor{comment}{//\ Forward\ declaration\ for\ the\ Filter\ interface}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_controller_a599e43d298dfa30b28337bdd6cb5693b}{Controller}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \doxymbox{\hyperlink{class_repository}{Repository}}\&\ repo;\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Stacks\ for\ Command\ Pattern}}
+\DoxyCodeLine{00023\ \ \ \ \ std::stack<std::unique\_ptr<Action>>\ undoStack;\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::stack<std::unique\_ptr<Action>>\ redoStack;\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_controller_a599e43d298dfa30b28337bdd6cb5693b}{Controller}}(\doxymbox{\hyperlink{class_repository}{Repository}}\&\ repo);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_controller_a52b8812ceca0b4368dea2e2b4399d860}{undo}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_controller_aeb55fe16b48f14b00c179e95a0372a17}{redo}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_controller_ae225224cbc5f20cf0f52a3f9816f8d0b}{deleteItem}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_controller_a0ea28855f462dbd9ae99e2279762fe29}{updateItem}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ newName,\ Category\ newCategory,\ \textcolor{keywordtype}{double}\ newPrice,\ \textcolor{keywordtype}{int}\ newQuantity);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \ \ std::vector<std::shared\_ptr<CraftItem>>\ \doxymbox{\hyperlink{class_controller_ad30f2bd11d5addb84e5bcacc4228d895}{getAllItems}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \ \ \ \ std::vector<std::shared\_ptr<CraftItem>>\ \doxymbox{\hyperlink{class_controller_a2138496c86ed20c4d1f8cd2899def6fc}{filterItems}}(std::shared\_ptr<Filter>\ filter)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \};}
+
+\end{DoxyCode}
