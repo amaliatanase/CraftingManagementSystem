@@ -4,8 +4,9 @@ A robust, interactive C++ desktop application for managing a handmade craft stor
 
 ## 📸 Interface Preview
 <div align="center">
-<img width="600" alt="Main UI Screenshot" src="https://github.com/user-attachments/assets/INLOCUIESTE-CU-LINK-POZA-1" />
-<img width="600" alt="Filter Screenshot" src="https://github.com/user-attachments/assets/INLOCUIESTE-CU-LINK-POZA-2" />
+<img width="802" height="437" alt="Screenshot 2026-06-02 at 20 18 15" src="https://github.com/user-attachments/assets/f37b50cf-ac76-4d10-a231-ab629bd45c12" />
+<img width="799" height="435" alt="Screenshot 2026-06-02 at 20 18 31" src="https://github.com/user-attachments/assets/340eec72-21f4-40fd-843a-342d1ce19290" />
+<img width="798" height="434" alt="Screenshot 2026-06-02 at 20 18 49" src="https://github.com/user-attachments/assets/829c9ffd-04b1-4e74-8cfa-759eca2c6413" />
 </div>
 
 ## 🎮 Core Features
