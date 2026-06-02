@@ -56,6 +56,19 @@ public:
      * @param quantity The stock available. Must be >= 0.
      * @throws std::runtime_error If data validation fails (e.g., negative price or empty name).
      */
+    void addItem(int id, const std::string& name, Category category, double price, int quantity);
+
+    /**
+     * @brief Creates and adds a new CraftItem to the store.
+     * * Validates the input data and creates an AddAction. The action is executed
+     * and saved in the undo stack. The redo stack is cleared.
+     * @param id The unique identifier for the new item.
+     * @param name The name of the product.
+     * @param category The category of the item.
+     * @param price The price of the item. Must be >= 0.
+     * @param quantity The stock available. Must be >= 0.
+     * @throws std::runtime_error If data validation fails (e.g., negative price or empty name).
+     */
     /**
      * @brief Deletes a CraftItem from the store by its ID.
      * * Searches for the item, creates a RemoveAction, executes it,

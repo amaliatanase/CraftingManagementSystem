@@ -105,6 +105,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a52b8812ceca0b4368dea2e2b4399d860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverts the last executed action.  <br /></td></tr>
 <tr class="memitem:aeb55fe16b48f14b00c179e95a0372a17" id="r_aeb55fe16b48f14b00c179e95a0372a17"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aeb55fe16b48f14b00c179e95a0372a17">redo</a> ()</td></tr>
 <tr class="memdesc:aeb55fe16b48f14b00c179e95a0372a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reapplies the last undone action.  <br /></td></tr>
+<tr class="memitem:a87f5c19684dd88baf933594644dc8bbc" id="r_a87f5c19684dd88baf933594644dc8bbc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a87f5c19684dd88baf933594644dc8bbc">addItem</a> (int id, const std::string &amp;name, Category category, double price, int quantity)</td></tr>
+<tr class="memdesc:a87f5c19684dd88baf933594644dc8bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and adds a new <a class="el" href="class_craft_item.html" title="Represents a single product in the handmade craft store.">CraftItem</a> to the store.  <br /></td></tr>
 <tr class="memitem:ae225224cbc5f20cf0f52a3f9816f8d0b" id="r_ae225224cbc5f20cf0f52a3f9816f8d0b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae225224cbc5f20cf0f52a3f9816f8d0b">deleteItem</a> (int id)</td></tr>
 <tr class="memdesc:ae225224cbc5f20cf0f52a3f9816f8d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and adds a new <a class="el" href="class_craft_item.html" title="Represents a single product in the handmade craft store.">CraftItem</a> to the store.  <br /></td></tr>
 <tr class="memitem:a0ea28855f462dbd9ae99e2279762fe29" id="r_a0ea28855f462dbd9ae99e2279762fe29"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0ea28855f462dbd9ae99e2279762fe29">updateItem</a> (int id, const std::string &amp;newName, Category newCategory, double newPrice, int newQuantity)</td></tr>
@@ -154,6 +156,63 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a87f5c19684dd88baf933594644dc8bbc" name="a87f5c19684dd88baf933594644dc8bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87f5c19684dd88baf933594644dc8bbc">&#9670;&#160;</a></span>addItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::addItem </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Category</td>          <td class="paramname"><span class="paramname"><em>category</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>price</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>quantity</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates and adds a new <a class="el" href="class_craft_item.html" title="Represents a single product in the handmade craft store.">CraftItem</a> to the store. </p>
+<ul>
+<li>Validates the input data and creates an <a class="el" href="class_add_action.html" title="Encapsulates the logic for adding a new CraftItem to the repository.">AddAction</a>. The action is executed and saved in the undo stack. The redo stack is cleared. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The unique identifier for the new item. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the product. </td></tr>
+    <tr><td class="paramname">category</td><td>The category of the item. </td></tr>
+    <tr><td class="paramname">price</td><td>The price of the item. Must be &gt;= 0. </td></tr>
+    <tr><td class="paramname">quantity</td><td>The stock available. Must be &gt;= 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If data validation fails (e.g., negative price or empty name). </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+
+</div>
+</div>
 <a id="ae225224cbc5f20cf0f52a3f9816f8d0b" name="ae225224cbc5f20cf0f52a3f9816f8d0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae225224cbc5f20cf0f52a3f9816f8d0b">&#9670;&#160;</a></span>deleteItem()</h2>
 

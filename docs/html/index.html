@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Main Page</title>
+<title>My Project: Handmade Craft Store Management 🎨</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,10 +87,44 @@ $(function(){initNavTree('index.html','',''); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">My Project Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Handmade Craft Store Management 🎨 </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>A robust, interactive C++ desktop application for managing a handmade craft store's inventory, featuring a clean Graphical User Interface (GUI) built with Qt.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+📸 Interface Preview</h1>
+<div align="center"> <img src="https://github.com/user-attachments/assets/INLOCUIESTE-CU-LINK-POZA-1" alt="Main UI Screenshot" width="600" class="inline"/> <img src="https://github.com/user-attachments/assets/INLOCUIESTE-CU-LINK-POZA-2" alt="Filter Screenshot" width="600" class="inline"/> </div><h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+🎮 Core Features</h1>
+<ul>
+<li><b>Inventory Management:</b> Seamlessly Add, Remove, and Update craft items. Includes an auto-population feature: clicking an item in the list automatically fills the input forms for quick editing.</li>
+<li><b>Advanced Dynamic Filtering:</b> <a class="el" href="class_filter.html" title="Abstract base class (Interface) for the Specification Design Pattern.">Filter</a> items by Name, Category, or Max Price. The system allows combining multiple criteria simultaneously using logical <span class="tt">AND</span> / <span class="tt">OR</span> operators.</li>
+<li><b>Time-Travel (Undo/Redo):</b> Navigate back and forth through your actions history with a robust undo/redo system, ensuring complete control over the inventory state without data loss.</li>
+<li><b>Polymorphic Persistence:</b> Store your inventory data dynamically in either <span class="tt">CSV</span> or <span class="tt">JSON</span> format.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+🛠️ Technologies &amp; Architecture</h1>
+<ul>
+<li><b>Language:</b> C++ (utilizing RAII principles and Smart Pointers: <span class="tt">std::shared_ptr</span>, <span class="tt">std::unique_ptr</span> for memory safety).</li>
+<li><b>GUI Framework:</b> Qt 6</li>
+<li><b>Core Architecture:</b> Strict <b>3-Layered Architecture</b> ensuring a clean separation of concerns between the User Interface, <a class="el" href="class_controller.html" title="Handles the business logic of the application.">Controller</a> (Business Logic), and <a class="el" href="class_repository.html" title="Base class for managing the storage and retrieval of CraftItem objects.">Repository</a> (Data Access).</li>
+<li><b>Design Patterns:</b> Command Pattern (for Undo/Redo), Specification &amp; Composite Patterns (for scalable filtering), and Factory Pattern (for repository instantiation).</li>
+<li><b>Data Management:</b> File I/O operations and Qt JSON library (<span class="tt">QJsonDocument</span>, <span class="tt">QJsonObject</span>) for persistent data storage.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+🚀 How to Build and Run</h1>
+<ul>
+<li><b>Build System:</b> The project is configured using <b>CMake</b>, making it easily compatible with modern IDEs like CLion.</li>
+<li><b>Dependencies:</b> You must have <b>Qt6</b> installed on your system.</li>
+<li><b>Setup:</b> Before building, open <span class="tt">CMakeLists.txt</span> and update the <span class="tt">CMAKE_PREFIX_PATH</span> variable to point to your local Qt6 installation directory.</li>
+<li><b>Data Configuration:</b> When the application runs in the console, you will be prompted to enter a filename (e.g., <span class="tt">produse.csv</span> or <span class="tt">produse.json</span>). Make sure to place this file in your executable's working directory (usually <span class="tt">cmake-build-debug</span> in CLion), or provide the absolute path to the file.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+📚 Code Documentation</h1>
+<p>The entire source code is fully documented following professional Doxygen standards.</p>
+<p>👉 <b><a href="https://amaliatanase.github.io/CraftingManagementSystem/docs/html/index.html">Click Here to view the full HTML Doxygen Documentation</a></b> </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
