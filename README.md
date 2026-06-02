@@ -5,11 +5,12 @@ A robust, interactive C++ desktop application for managing a handmade craft stor
 ## 📸 Interface Preview
 <div align="center">
   
-![Screenshot 1](https://github.com/user-attachments/assets/f37b50cf-ac76-4d10-a231-ab629bd45c12)
+<img width="802" height="437" alt="Screenshot 2026-06-02 at 20 18 15" src="https://github.com/user-attachments/assets/76c8f5b5-156d-4f0d-a7ae-0348eb271616" />
+<img width="799" height="435" alt="Screenshot 2026-06-02 at 20 18 31" src="https://github.com/user-attachments/assets/28bf8f71-f639-44cf-b9fa-931430ab5a2c" />
+<img width="798" height="434" alt="Screenshot 2026-06-02 at 20 18 49" src="https://github.com/user-attachments/assets/2cc689df-6630-4062-aeb0-d2ce585cbba6" />
 
-![Screenshot 2](https://github.com/user-attachments/assets/340eec72-21f4-40fd-843a-342d1ce19290)
 
-![Screenshot 3](https://github.com/user-attachments/assets/829c9ffd-04b1-4e74-8cfa-759eca2c6413)
+
 </div>
 
 ## 🎮 Core Features
