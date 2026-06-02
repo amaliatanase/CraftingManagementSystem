@@ -31,4 +31,4 @@ A robust, interactive C++ desktop application for managing a handmade craft stor
 ## 📚 Code Documentation
 The entire source code is fully documented following professional Doxygen standards.
 
-👉 **[Click Here to view the full HTML Doxygen Documentation](https://amaliatanase.github.io/CraftingManagementSystem/)**
+👉 **[Click Here to view the full HTML Doxygen Documentation](https://amaliatanase.github.io/CraftingManagementSystem/html/index.html)**
