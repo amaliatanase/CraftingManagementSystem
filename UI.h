@@ -111,6 +111,7 @@ public:
      * @param controller A reference to the Controller handling business logic.
      * @param parent An optional parent widget (nullptr for the main window).
      */
+    // it will need explicitly those parameters when called
     explicit UI(Controller& controller, QWidget* parent = nullptr);
 
     /**

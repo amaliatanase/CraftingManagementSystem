@@ -81,7 +81,7 @@ void RepositoryFileJSON::loadFromFile() {
     QFile file(QString::fromStdString(filename));
     // if it does not exist yet, start with an empty list
     if (!file.open(QIODevice::ReadOnly)) return;
-    // read the whole content
+    // read the whole content in a character array
     QByteArray data = file.readAll();
     file.close();
 

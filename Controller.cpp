@@ -37,7 +37,7 @@ void Controller::deleteItem(int id) {
 void Controller::updateItem(int id, const std::string& newName, Category newCategory, double newPrice, int newQuantity) {
     if (newName.empty()) throw std::runtime_error("Name cannot be empty!");
     if (newPrice < 0) throw std::runtime_error("Price cannot be negative!");
-    if (newQuantity < 0) throw std::runtime_error("Quantity cannot be negative!"); // Opțional, dar util
+    if (newQuantity < 0) throw std::runtime_error("Quantity cannot be negative!");
     // find the old state of the item
     auto oldItem = repo.find(id);
     if (!oldItem) throw std::runtime_error("Item with the specified ID was not found!");
